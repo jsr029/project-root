@@ -2,11 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "frontend/index.js",
-      "use": "@vercel/static-build"
+      "src": "frontend/package.json",
+      "use": "@vercel/react"
     },
     {
-      "src": "backend/server.js",
+      "src": "frontend/index.js",
       "use": "@vercel/node"
     }
   ],
@@ -21,4 +21,5 @@
     }
   ]
 }
+
 
