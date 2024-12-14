@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({ 
-  baseURL: 'https://project-root-backend.vercel.app/api',
-  withCredentials: true, // If you are using credentials like cookies
+  baseURL: 'https://project-root-backend.vercel.app/api'
 });
 
 API.interceptors.request.use((req) => {
