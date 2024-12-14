@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'https://project-root-backend.vercel.app/api' });
+const API = axios.create({ 
+  baseURL: 'https://project-root-backend.vercel.app/api',
+  withCredentials: true, // If you are using credentials like cookies
+});
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem('token')) {
