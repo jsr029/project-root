@@ -11,7 +11,7 @@ const ProjectCard = ({ project, isAdmin, handleEdit, handleDelete }) => {
 
   return (
     <Card style={{ width: '25rem', cursor: 'pointer' }} onClick={handleClick}>
-      <Card.Img variant="top" src={`http://localhost:5000${project.imageUrl}`} alt={project.title} height={200} />
+      <Card.Img variant="top" src={`https://project-root-backend.vercel.app${project.imageUrl}`} alt={project.title} height={200} />
       <Card.Body>
         <Card.Title style={{whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"}}>{project.title}</Card.Title>
         <Card.Text style={{height:"100px"}}>{project.description}</Card.Text>
