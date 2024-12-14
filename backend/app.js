@@ -11,9 +11,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: 'https://project-root-frontend.vercel.app', // Replace with your frontend URL
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', 
-  credentials: true, // If you're using cookies or other credentials
+  origin: 'https://project-root-frontend.vercel.app'
 }));
 app.use(express.json());
 /** Premier middleware et sera appliqué à toutes les routes, middleware général */
