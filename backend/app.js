@@ -10,9 +10,7 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({
-  origin: 'https://project-root-frontend.vercel.app'
-}));
+app.use(cors());
 /** Premier middleware et sera appliqué à toutes les routes, middleware général */
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
