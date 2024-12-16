@@ -6,6 +6,28 @@
       "use": "@vercel/node"
     }
   ],
+    "images": {
+    "sizes": [256, 640, 1080, 2048, 3840],
+    "localPatterns": [{
+      "pathname": "^/uploads/.*$",
+      "search": ""
+    }],
+    "remotePatterns": [
+      {
+        "protocol": "https",
+        "hostname": "project-root-backend.vercel.app",
+        "port": "",
+        "pathname": "^/account123/.*$",
+        "search": "?v=1"
+      }
+    ],
+    "minimumCacheTTL": 60,
+    "formats": ["image/webp"],
+    "dangerouslyAllowSVG": false,
+    "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
+    "contentDispositionType": "inline"
+  },
+
   "routes": [
     {
       "src": "/(.*)",
