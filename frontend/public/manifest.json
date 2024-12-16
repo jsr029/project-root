@@ -1,6 +1,12 @@
 {
+  "manifest_version": 2,
   "short_name": "React App",
   "name": "Create React App Sample",
+  "version": "1.0",
+  "web_accessible_resources": [
+    "uploads",
+    "api"
+  ],
   "icons": [
     {
       "src": "favicon.ico",
@@ -23,3 +29,4 @@
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
+

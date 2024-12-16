@@ -10,7 +10,10 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://project-root-frontend.vercel.app:3000',
+  credentials: true
+}));
 app.use(express.json());
 /** Premier middleware et sera appliqué à toutes les routes, middleware général */
 app.use((req, res, next) => {
@@ -36,7 +39,7 @@ app.use((err, req, res, next) => {
 });
 
 app.use('/api/auth', authRoutes);
-app.use('/api/users', userRoutes);
+app.use('//api/users', userRoutes);
 app.use('/api/projects', projectRoutes);
 
 // General error handling middleware
