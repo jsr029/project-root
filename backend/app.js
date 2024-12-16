@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: 'https://project-root-frontend.vercel.app:3000',
+  origin: 'https://project-root-frontend.vercel.app',
   credentials: true
 }));
 app.use(express.json());
