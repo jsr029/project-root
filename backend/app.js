@@ -10,17 +10,14 @@ dotenv.config();
 
 const app = express();
 
-<<<<<<< HEAD
 app.use(cors({
   origin: 'https://project-root-frontend.vercel.app:3000',
   credentials: true
 }));
 app.use(express.json());
 /** Premier middleware et sera appliqué à toutes les routes, middleware général */
-=======
 app.use(cors());
 
->>>>>>> bae2ac7c0f99fc6379620cb6db865f4993009a58
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
