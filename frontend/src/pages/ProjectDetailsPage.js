@@ -24,7 +24,7 @@ const ProjectDetailsPage = () => {
       <Row>
         <Col md={12}>
           <Card>
-            <Card.Img variant="top" src={`http://localhost:5000${project.imageUrl}`} alt={project.title} />
+            <Card.Img variant="top" src={`https://project-root-backend.vercel.app${project.imageUrl}`} alt={project.title} />
             <Card.Body>
               <Card.Title>{project.title}</Card.Title>
               <Card.Text>{project.description}</Card.Text>

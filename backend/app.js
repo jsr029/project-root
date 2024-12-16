@@ -10,12 +10,17 @@ dotenv.config();
 
 const app = express();
 
+<<<<<<< HEAD
 app.use(cors({
   origin: 'https://project-root-frontend.vercel.app:3000',
   credentials: true
 }));
 app.use(express.json());
 /** Premier middleware et sera appliqué à toutes les routes, middleware général */
+=======
+app.use(cors());
+
+>>>>>>> bae2ac7c0f99fc6379620cb6db865f4993009a58
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
@@ -23,29 +28,25 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.json());
+
 app.use('/uploads', express.static('uploads'));
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('Connected to mongoDB'))
   .catch((error) => console.log('Not connected to mongoDB', error));
 
-// General error handling middleware for handling duplicate key errors
-app.use((err, req, res, next) => {
-  if (err.code === 11000) {
-    res.status(409).json({ error: 'Duplicate key error' });
-  } else {
-    next(err);
-  }
-});
-
 app.use('/api/auth', authRoutes);
 app.use('//api/users', userRoutes);
 app.use('/api/projects', projectRoutes);
 
-// General error handling middleware
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: 'Something went wrong!' });
+  if (err.code === 11000) {
+    res.status(409).json({ error: 'Duplicate key error' });
+  } else {
+    console.error(err.stack);
+    res.status(500).json({ error: 'Something went wrong!' });
+  }
 });
 
 module.exports = app;

@@ -1,6 +1,13 @@
 import axios from 'axios';
 
+<<<<<<< HEAD
 const API = axios.create({ baseURL: 'https://project-root-backend.vercel.app/api' })
+=======
+const API = axios.create({ 
+  baseURL: 'https://project-root-backend.vercel.app/api'
+});
+
+>>>>>>> bae2ac7c0f99fc6379620cb6db865f4993009a58
 API.interceptors.request.use((req) => {
   if (localStorage.getItem('token')) {
     req.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
